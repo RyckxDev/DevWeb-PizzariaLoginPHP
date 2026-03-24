@@ -79,9 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['produto_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="response.css">
     <title>Dashboard de Produtos</title>
+    <link rel="stylesheet" href="dashboard.css" media="all">
 </head>
 <body class="pagina-app">
     <div class="conteudo">

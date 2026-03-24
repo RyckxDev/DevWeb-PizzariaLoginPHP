@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg: #0f0d0b;
+  --clr-surface: #1a1612;
+  --clr-surface2: #231e18;
+  --clr-border: rgba(255, 255, 255, .08);
+  --clr-accent: #e8420a;
+  --clr-accent-h: #ff5522;
+  --clr-gold: #c9923a;
+  --clr-text: #f0ebe3;
+  --clr-muted: #8c8070;
+
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body: 'DM Sans', system-ui, sans-serif;
+
+  --sp-sm: .75rem;
+  --sp-md: 1.25rem;
+  --sp-lg: 2rem;
+  --sp-xl: 3rem;
+
+  --radius: 10px;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--ff-body);
+  min-height: 100dvh;
+}
+
+.conteudo {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--sp-xl) var(--sp-md);
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-xl);
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.topo h2 {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+}
+
+.topo a {
+  font-size: .875rem;
+  color: var(--clr-muted);
+  transition: color .2s;
+}
+
+.topo a:hover {
+  color: var(--clr-text);
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.produto {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .4);
+}
+
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.produto h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  margin: var(--sp-md);
+}
+
+.produto p {
+  margin: 0 var(--sp-md) var(--sp-md);
+  color: var(--clr-gold);
+  font-size: 1rem;
+}
+
+.produto form {
+  margin-top: auto;
+  padding: var(--sp-md);
+}
+
+.btn-cheio {
+  width: 100%;
+  padding: .75rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--clr-accent);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+@media (max-width: 768px) {
+  .conteudo {
+    padding: var(--sp-lg) var(--sp-md);
+  }
+
+  .topo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .produto img {
+    height: 160px;
+  }
+
+  .topo h2 {
+    font-size: 1.25rem;
+  }
+}
